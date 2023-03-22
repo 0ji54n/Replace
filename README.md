@@ -36,6 +36,9 @@ Looks totally different! Now it just moving a nop to [eax] and return. And eax i
 ![inc eax and call changeable again](https://media.discordapp.net/attachments/1001097982957068298/1087946410139332699/image.png)
 
 Increasing eax by 1 and calling changeable again mean we can overwrite 2 opcodes next to each other to 0x90. Sounds interesting! But where do we want to overwrite? And how can we make *eax* to a valid address?
+
+![overwrite](https://cdn.discordapp.com/attachments/1001097982957068298/1087946952152469555/image.png)
+
 Go back to IDA, we see that the *jmp short loc_401084* (0x11eb) makes the function call SetDlgItemTextA(esi, 0x3e9, &"Correct!") will never be hit.
 So the goal will be to overwrite 0x11eb to 0x9090, then the program won't crash anymore and SetDlgItemTextA will be called.
 
