@@ -26,7 +26,7 @@ Then it returns to some opcode that IDA doesn't recognize as code, and it also w
 
 ![adding number with something in x32dbg](https://media.discordapp.net/attachments/1001097982957068298/1087943960179265606/image.png)
 
-The *number* after **inc_num** 4 times and adding with 0x601605c7 will be stored/saved in eax. Next, *mov dword ptr ds:[changeable], 0xc39000C6* is where the actual fun begins.
+The *number* will be add with 0x601605c7 and inc twice again. Then it will be stored/saved in eax. Next, *mov dword ptr ds:[changeable], 0xc39000C6* is where the actual fun begins.
 *Changeable* will be called right after that, but look at it.
 
 ![changeable after change](https://media.discordapp.net/attachments/1001097982957068298/1087945438541398097/image.png)
